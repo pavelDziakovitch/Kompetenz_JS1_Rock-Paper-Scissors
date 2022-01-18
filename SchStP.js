@@ -1,7 +1,7 @@
 "use strict";
 
 function playGame(userSelection){
-    setTimeout(setRounds, 350); //hide userSetRounds 
+    setTimeout(setRounds(),500); //hide userSetRounds 
     roundResult.parentNode.style.visibility = "visible"; //show round results
     let roundwinner;   
     roundCounter++;
@@ -60,18 +60,14 @@ function playGame(userSelection){
     //alert user who won match and reset gamefield
     setTimeout(function() {
         if(pointsUser === roundsToWin){
-            removeEventListeners();
             alert("Spieler hat gewonnen");
             resetGame();
-            addEventListeners();
         }
         else if(pointsAI === roundsToWin){
-            removeEventListeners();
             alert("AI hat gewonnen");
             resetGame();
-            addEventListeners()
         }
-    }, 400)
+    }, 400);
 }
 
 //show right images for ai and user selection
@@ -137,32 +133,16 @@ function animateIcons(icon){
     icon.style.backgroundColor = "rgba(28, 28, 155, 0.4)";
     setTimeout(function(){
         icon.style.transform = "scale(1)";   
-        icon.style.backgroundColor = "transparent";    
-    },200)
+        icon.style.backgroundColor = "transparent";
+    },150);
+
+    setTimeout(function(){
+        icon.addEventListener("click", function(e) {
+            animateIcons(icon);
+            playGame(0);
+        }, {once : true});
+    },500)
 }
-
-function removeEventListeners(){
-    icons[0].replaceWith(icons[0].cloneNode(true));
-    icons[1].replaceWith(icons[1].cloneNode(true));
-    icons[2].replaceWith(icons[2].cloneNode(true));
-}
-
-function addEventListeners(){
-    icons[0].addEventListener("click", function(e) {
-        animateIcons(icons[0]);
-        playGame(0);
-    })
-    icons[1].addEventListener("click", function(e) {
-        animateIcons(icons[1]);
-        playGame(1);
-    })
-    icons[2].addEventListener("click", function(e) {
-        animateIcons(icons[2]);
-        playGame(2);
-    })
-}
-
-
 
 //Get all needed Elements
 let btnRound = document.getElementById("roundBTN");
@@ -191,15 +171,19 @@ roundCounterP.textContent = roundCounter;
 icons[0].addEventListener("click", function(e) {
     animateIcons(icons[0]);
     playGame(0);
-})
+}, {once : true});
+
+
 icons[1].addEventListener("click", function(e) {
     animateIcons(icons[1]);
     playGame(1);
-})
+}, {once : true})
+
+
 icons[2].addEventListener("click", function(e) {
     animateIcons(icons[2]);
     playGame(2);
-})
+}, {once : true})
 
-//Set new Amount of Rounds is needed to win
+//Set new amount of Rounds is needed to win
 btnRound.onclick = setRounds;
