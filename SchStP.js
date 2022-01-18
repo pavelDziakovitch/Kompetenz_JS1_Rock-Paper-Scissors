@@ -60,14 +60,18 @@ function playGame(userSelection){
     //alert user who won match and reset gamefield
     setTimeout(function() {
         if(pointsUser === roundsToWin){
-            alert("Spieler hat gewonnen")
+            removeEventListeners();
+            alert("Spieler hat gewonnen");
             resetGame();
+            addEventListeners();
         }
         else if(pointsAI === roundsToWin){
-            alert("AI hat gewonnen")
+            removeEventListeners();
+            alert("AI hat gewonnen");
             resetGame();
+            addEventListeners()
         }
-    }, 1000)
+    }, 400)
 }
 
 //show right images for ai and user selection
@@ -92,7 +96,6 @@ function selectIMG(rndNumberAI, userSelection){
 
 //sets new value for round req. for winning
 function setRounds(){
-    console.log(userRound.value);
     if((userRound.value) !== ""){
         roundsToWin = Number(userRound.value);
     }
@@ -137,6 +140,29 @@ function animateIcons(icon){
         icon.style.backgroundColor = "transparent";    
     },200)
 }
+
+function removeEventListeners(){
+    icons[0].replaceWith(icons[0].cloneNode(true));
+    icons[1].replaceWith(icons[1].cloneNode(true));
+    icons[2].replaceWith(icons[2].cloneNode(true));
+}
+
+function addEventListeners(){
+    icons[0].addEventListener("click", function(e) {
+        animateIcons(icons[0]);
+        playGame(0);
+    })
+    icons[1].addEventListener("click", function(e) {
+        animateIcons(icons[1]);
+        playGame(1);
+    })
+    icons[2].addEventListener("click", function(e) {
+        animateIcons(icons[2]);
+        playGame(2);
+    })
+}
+
+
 
 //Get all needed Elements
 let btnRound = document.getElementById("roundBTN");
