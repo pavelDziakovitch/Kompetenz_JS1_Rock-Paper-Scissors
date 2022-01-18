@@ -10,13 +10,15 @@
 <body>
     <article id ="gameContainer">
         <h1>Rock Paper Scissors<br>The Game</h1>
-        <selection id="menu">
+        <!-- typofehler -->
+        <section id="menu">
             <div id = "userSelection">
                 <label>Wähle deinen Kämpfer!</label>
                 <div id="icons">
-                    <img src="img/paper.png">
-                    <img src="img/rock.png">
-                    <img src="img/scissors.png">
+                    <!-- für korrekte Flexboxen -->
+                    <span><img src="img/paper.png"></span>
+                    <span><img src="img/rock.png"></span>
+                    <span><img src="img/scissors.png"></span>
                 </div>
             </div>
 
@@ -26,7 +28,7 @@
                 <input type="text" id="inputForRounds">
             </div>
 
-        </selection> 
+        </section> 
         <section id = "showImgHere">
             <div id= "roundCounterField">
                 <h1>Runde: </h1>  

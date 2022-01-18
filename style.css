@@ -1,19 +1,23 @@
 @import url('http://fonts.cdnfonts.com/css/mortal-kombat');
-
+/* besser wäre es das Styling über Klassen zu machen ;) */
 /* General */
 body{
     margin: 0;
     padding: 0;
-    display: flex;
+    /* useless */
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
     background-image: url("img/arena.jpg");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
+    /* falls man scrollen muss, ist das Bild fixiert */
+    background-attachment: fixed;
     color:white;
     font-family: 'Mortal Kombat 4', sans-serif;
-    height:100vh;
+    /* min-height besser, falls der Inhalt mehr platz braucht */
+    min-height:100vh;
 }
 
 aside{
@@ -45,10 +49,14 @@ p, label{
 
 #gameContainer{
     height: fit-content;
-    width: 80vw;
-    display: flex;
+    max-width: 1200px;
+    width: 90%;
+    /* useless */
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
+    margin: 3% auto;
+    padding: 20px 0;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.808);
     box-shadow: 0 0 200px rgb(0, 0, 0);
@@ -60,8 +68,11 @@ p, label{
 
 #menu{
     display: flex;
-    flex-direction: row;
+    /* Default wert ist row - muss man nicht setzen */
+    /* flex-direction: row; */
     justify-content: space-around;
+    /* Für Umbruch am Handy */
+    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -69,14 +80,20 @@ p, label{
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    /* Default wert ist row - muss man nicht setzen */
+    /* flex-direction: row; */
     flex-wrap: nowrap;
     gap: 2px;
     flex-grow: 1;
 }
+#icons span {
+    flex: 1 0 90px;
+}
 #icons img{
-    width: 6em;
-    height: 6em;
+    width: 100%;
+    height: 100%;
+    max-width: 6em;
+    max-height: 6em;
     cursor: pointer;
     border-radius: 10px;
     transition: all 0.1s ease-in-out;
@@ -100,15 +117,11 @@ p, label{
     justify-content: center;
     align-items: center;
     margin-top: 1em;
+
+    /* besser als width */
+    flex: 1 1 400px;
 }
 
-#userSelection{
-    width: 40%;
-}
-
-#userRoundsSet{
-    width: 40%;
-}
 
 #inputForRounds{
     width: 20%;
@@ -152,10 +165,12 @@ p, label{
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: row;
+    /* siehe oben */
+    /* flex-direction: row; */
     justify-content: space-around;
     align-items: center;
-    justify-self: flex-end;
+    /* useless */
+    /* justify-self: flex-end; */
     flex-wrap: wrap;
 }
 
@@ -180,6 +195,7 @@ p, label{
 #aiField img, #userField img{
     display: block;
     margin-top: 1em;
+    /* nicht ganz sauber gelöst... */
     margin-left: 50%;
     transform: translateX(-50%);
     width: 12vw;
@@ -195,26 +211,27 @@ p, label{
     font-size: calc(2vh + 2vw);
 }
 
-@media (max-width: 600px){
+@media (max-width: 720px){
     #gameContainer{
         width: 100%;
     }
     p, label, #vsText{
         font-size: 1em;
     }
-    #aiField, #userField{
+    /* nicht notwendig */
+    /* #aiField, #userField{
         height: 14em;
-    }
-    #aiField img, #userField img{
+    } 
+     #aiField img, #userField img{
         width: 7em;
         height: 7em;
         margin-top: 2em;
-    }
-    #userSelection{
+    } 
+     #userSelection{
         width: 65%;
-    }
-    #icons img{
+    } 
+     #icons img{
         width: 4em;
         height: 4em;
-    }
+    } */
 }
