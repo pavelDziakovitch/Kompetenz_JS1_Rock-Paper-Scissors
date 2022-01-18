@@ -1,23 +1,17 @@
 @import url('http://fonts.cdnfonts.com/css/mortal-kombat');
-/* besser wäre es das Styling über Klassen zu machen ;) */
+
 /* General */
 body{
     margin: 0;
     padding: 0;
-    /* useless */
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
     background-image: url("img/arena.jpg");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    /* falls man scrollen muss, ist das Bild fixiert */
     background-attachment: fixed;
     color:white;
     font-family: 'Mortal Kombat 4', sans-serif;
-    /* min-height besser, falls der Inhalt mehr platz braucht */
-    min-height:100vh;
+    min-height: 100vh;
 }
 
 aside{
@@ -51,10 +45,6 @@ p, label{
     height: fit-content;
     max-width: 1200px;
     width: 90%;
-    /* useless */
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
     margin: 3% auto;
     padding: 20px 0;
     text-align: center;
@@ -68,10 +58,7 @@ p, label{
 
 #menu{
     display: flex;
-    /* Default wert ist row - muss man nicht setzen */
-    /* flex-direction: row; */
     justify-content: space-around;
-    /* Für Umbruch am Handy */
     flex-wrap: wrap;
     width: 100%;
 }
@@ -80,8 +67,6 @@ p, label{
     width: 100%;
     display: flex;
     justify-content: center;
-    /* Default wert ist row - muss man nicht setzen */
-    /* flex-direction: row; */
     flex-wrap: nowrap;
     gap: 2px;
     flex-grow: 1;
@@ -117,8 +102,6 @@ p, label{
     justify-content: center;
     align-items: center;
     margin-top: 1em;
-
-    /* besser als width */
     flex: 1 1 400px;
 }
 
@@ -165,12 +148,8 @@ p, label{
     width: 100%;
     height: auto;
     display: flex;
-    /* siehe oben */
-    /* flex-direction: row; */
     justify-content: space-around;
     align-items: center;
-    /* useless */
-    /* justify-self: flex-end; */
     flex-wrap: wrap;
 }
 
@@ -195,9 +174,7 @@ p, label{
 #aiField img, #userField img{
     display: block;
     margin-top: 1em;
-    /* nicht ganz sauber gelöst... */
-    margin-left: 50%;
-    transform: translateX(-50%);
+    margin: 1em auto 0;
     width: 12vw;
     height: 12vw;
     border-radius: 10%;
@@ -216,22 +193,6 @@ p, label{
         width: 100%;
     }
     p, label, #vsText{
-        font-size: 1em;
+        font-size: 1.3em;
     }
-    /* nicht notwendig */
-    /* #aiField, #userField{
-        height: 14em;
-    } 
-     #aiField img, #userField img{
-        width: 7em;
-        height: 7em;
-        margin-top: 2em;
-    } 
-     #userSelection{
-        width: 65%;
-    } 
-     #icons img{
-        width: 4em;
-        height: 4em;
-    } */
 }

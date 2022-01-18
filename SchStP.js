@@ -73,7 +73,6 @@ function playGame(userSelection){
 //show right images for ai and user selection
 function selectIMG(rndNumberAI, userSelection){
     let tempSelection = rndNumberAI;
-
     for(let i = 0; i < 2; i++){
         switch(tempSelection){
             case 0: imgs[i].setAttribute("src","img/paper.png");
@@ -87,7 +86,6 @@ function selectIMG(rndNumberAI, userSelection){
         }
         tempSelection = userSelection
     }
-
 }
 
 //sets new value for round req. for winning
