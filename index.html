@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissors - The Game</title>
+</head>
+<body>
+    <article id ="gameContainer">
+        <h1>Rock Paper Scissors<br>The Game</h1>
+        <selection id="menu">
+            <div id = "userSelection">
+                <label>Wähle deinen Kämpfer!</label>
+                <div id="icons">
+                    <img src="img/paper.png">
+                    <img src="img/rock.png">
+                    <img src="img/scissors.png">
+                </div>
+            </div>
+
+            <div id ="userRoundsSet">
+                <label for="inputForRounds" id="labelforRounds">Runden bis zum Sieg eingeben:</label>
+                <button id ="roundBTN">Bestätigen</button>
+                <input type="text" id="inputForRounds">
+            </div>
+
+        </selection> 
+        <section id = "showImgHere">
+            <div id= "roundCounterField">
+                <h1>Runde: </h1>  
+                <p id="roundCounter"></p> 
+            </div>
+            <div id = "aiField">
+                <h1>AI</h1>
+                <p>Punkte: </p>
+                <p id = textPointsAI>
+                </p>
+                <img src="http://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif">
+            </div>
+            <h1 id="vsText">VS</h1>
+            <div id = "userField">
+                <h1>User</h1>
+                <p>Punkte: </p>
+                <p id = textPointsUser>
+                </p>
+                <img src="http://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif">
+            </div> 
+        </section>
+
+        <aside>
+            <h1>Ergebnis dieser Runde: </h1>
+            <p id="roundResult"></p>
+        </aside>  
+
+    </article>
+    <script src="SchStP.js"></script>
+</body>
+</html>

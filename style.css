@@ -1,0 +1,220 @@
+@import url('http://fonts.cdnfonts.com/css/mortal-kombat');
+
+/* General */
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("img/arena.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+    font-family: 'Mortal Kombat 4', sans-serif;
+    height:100vh;
+}
+
+aside{
+    text-align: center;
+    height: fit-content;
+    transition: all 0.3s ease-in-out;
+    visibility: hidden;
+
+}
+
+aside p{
+    margin-top: 1vh;
+    margin-bottom: 0.5vh;
+}
+
+h1{
+    font-size: 4vh;
+}
+
+h1:first-of-type{
+    margin: 0.5em 0;
+}
+
+p, label{
+    font-size: 1.5em;
+}
+
+/* Gamefield */
+
+#gameContainer{
+    height: fit-content;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.808);
+    box-shadow: 0 0 200px rgb(0, 0, 0);
+    border-bottom-left-radius: 100px;
+    border-top-right-radius:  100px;
+    border-top-left-radius:  20px;
+    border-bottom-right-radius:  20px;
+}
+
+#menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#icons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 2px;
+    flex-grow: 1;
+}
+#icons img{
+    width: 6em;
+    height: 6em;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.1s ease-in-out;
+}
+
+#icons img:first-child{
+    border: 2px solid white;
+}
+
+#icons img:nth-child(2){
+    border: 2px solid gray;
+}
+
+#icons img:last-child{
+    border: 2px solid black;
+}
+
+#userSelection, #userRoundsSet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+#userSelection{
+    width: 40%;
+}
+
+#userRoundsSet{
+    width: 40%;
+}
+
+#inputForRounds{
+    width: 20%;
+    height: 2em;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Mortal Kombat 4', sans-serif;
+    font-size: 2vh;
+    order: 2;
+}
+
+#roundBTN{
+    font-family: 'Mortal Kombat 4', sans-serif;
+    width: fit-content;
+    height: 2.5em;
+    border-radius: 10px;
+    font-size: 0.8em;
+    order: 3;
+}
+
+#roundBTN:active ~ #inputForRounds{
+    border-color: green;
+}
+
+#userSelection *, #userRoundsSet *:not(:first-child) {
+    margin-top: 1em;
+}
+
+#roundCounterField{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 1vh 0 1vh 0;
+}
+
+#roundCounterField *{
+    display: inline;
+}
+
+#showImgHere{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    justify-self: flex-end;
+    flex-wrap: wrap;
+}
+
+#aiField, #userField{
+    text-align: center;
+    width: 40%;
+    border-radius: 10px;
+}
+
+#aiField{
+    border: 3px solid red;
+}
+
+#userField{
+    border: 3px solid blue;
+}    
+
+#aiField h1, #aiField p, #userField h1, #userField p{
+    margin:0.2em;
+}
+
+#aiField img, #userField img{
+    display: block;
+    margin-top: 1em;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 12vw;
+    height: 12vw;
+    border-radius: 10%;
+}
+
+#aiField p, #userField p{
+    display: inline;
+}
+
+#vsText{
+    font-size: calc(2vh + 2vw);
+}
+
+@media (max-width: 600px){
+    #gameContainer{
+        width: 100%;
+    }
+    p, label, #vsText{
+        font-size: 1em;
+    }
+    #aiField, #userField{
+        height: 14em;
+    }
+    #aiField img, #userField img{
+        width: 7em;
+        height: 7em;
+        margin-top: 2em;
+    }
+    #userSelection{
+        width: 65%;
+    }
+    #icons img{
+        width: 4em;
+        height: 4em;
+    }
+}
