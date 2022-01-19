@@ -7,50 +7,49 @@
     <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors - The Game</title>
 </head>
-<body>
-    <article id ="gameContainer">
+<body class="flex textMK">
+    <article class ="gameContainer fitContentHeight centerText coolBorder BorderColorBlack">
         <h1>Rock Paper Scissors<br>The Game</h1>
-        <section id="menu">
-            <div id = "userSelection">
-                <label>Wähle deinen Kämpfer!</label>
-                <div id="icons">
+        <section id="menu" class="flex menu width100">
+            <div id = "userSelection" class="interactiveField flex">
+                <label class=" dynamicFontSize">Wähle deinen Kämpfer!</label>
+                <div id="icons" class="icons flex width100">
                     <!-- für korrekte Flexboxen -->
-                    <span><img src="img/paper.png"></span>
-                    <span><img src="img/rock.png"></span>
-                    <span><img src="img/scissors.png"></span>
+                    <span class="marginTop1em"><img class="width100 borderSmall borderColorWhite" src="img/paper.png"></span>
+                    <span class="marginTop1em"><img class="width100 borderSmall borderColorGray" src="img/rock.png"></span>
+                    <span class="marginTop1em"><img class="width100 borderSmall borderColorBlack" src="img/scissors.png"></span>
                 </div>
             </div>
-
-            <div id ="userRoundsSet">
-                <label for="inputForRounds" id="labelforRounds">Runden bis zum Sieg eingeben:</label>
-                <button id ="roundBTN">Bestätigen</button>
-                <input type="text" id="inputForRounds">
+            <div id ="userRoundsSet" class="interactiveField flex marginTop1em">
+                <label for="inputForRounds" id="labelforRounds" class="dynamicFontSize">Runden bis zum Sieg eingeben:</label>
+                <button id ="roundBTN" class="verifyButton borderRadius textMK dynamicFontSize">Bestätigen</button>
+                <input type="text" id="inputForRounds" class="inputField centerText border borderRadius textMK dynamicFontSize">
             </div>
         </section> 
-        <section id = "showImgHere">
-            <div id= "roundCounterField">
-                <h1>Runde: </h1>  
-                <p id="roundCounter"></p> 
+        <section id = "showImgHere" class="noneInteractiveField width100 flex ">
+            <div id= "roundCounterField" class="width100 marginTop1em marginBot1em">
+                <h1 class="inline">Runde: </h1>  
+                <p id="roundCounter" class="inline dynamicFontSize"></p> 
             </div>
-            <div id = "aiField">
+            <div id = "aiField" class="border borderColorRed">
                 <h1>AI</h1>
-                <p>Punkte: </p>
-                <p id = "textPointsAI">
+                <p class="dynamicFontSize">Punkte: </p>
+                <p class=" dynamicFontSize" id = "textPointsAI">
                 </p>
-                <img src="http://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif">
+                <img class="bigIMGs" src="http://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif" class="marginTop1em borderRadius">
             </div>
-            <h1 id="vsText">VS</h1>
-            <div id = "userField">
+            <h1 id="vsText" class="textBetweenFields">VS</h1>
+            <div id = "userField" class="border borderColorBlue">
                 <h1>User</h1>
-                <p>Punkte: </p>
-                <p id = textPointsUser>
+                <p class=" dynamicFontSize">Punkte: </p>
+                <p class=" dynamicFontSize" id = textPointsUser >
                 </p>
-                <img src="http://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif">
+                <img class="bigIMGs" src="http://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif">
             </div> 
         </section>
         <aside>
             <h1>Ergebnis dieser Runde: </h1>
-            <p id="roundResult"></p>
+            <p class=" dynamicFontSize" id="roundResult"></p>
         </aside>  
     </article>
     <script src="SchStP.js"></script>

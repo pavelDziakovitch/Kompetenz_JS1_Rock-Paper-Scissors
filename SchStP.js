@@ -1,7 +1,7 @@
 "use strict";
 
 function playGame(userSelection){
-    setTimeout(setRounds(),500); //hide userSetRounds 
+    setTimeout(setRounds(),800); //hide userSetRounds 
     roundResult.parentNode.style.visibility = "visible"; //show round results
     let roundwinner;   
     roundCounter++;
@@ -126,7 +126,7 @@ function resetGame(){
 }
 
 //Animation on click for Icons
-function animateIcons(icon){
+function animateIcons(icon, index){
     icon.style.transform = "scale(0.9)";
     icon.style.backgroundColor = "rgba(28, 28, 155, 0.4)";
     setTimeout(function(){
@@ -136,8 +136,8 @@ function animateIcons(icon){
 
     setTimeout(function(){
         icon.addEventListener("click", function(e) {
-            animateIcons(icon);
-            playGame(0);
+            animateIcons(icon, index);
+            playGame(index);
         }, {once : true});
     },500)
 }
@@ -167,19 +167,19 @@ roundCounterP.textContent = roundCounter;
 
 //Event, when one icon is clicked
 icons[0].addEventListener("click", function(e) {
-    animateIcons(icons[0]);
+    animateIcons(icons[0], 0);
     playGame(0);
 }, {once : true});
 
 
 icons[1].addEventListener("click", function(e) {
-    animateIcons(icons[1]);
+    animateIcons(icons[1], 1);
     playGame(1);
 }, {once : true})
 
 
 icons[2].addEventListener("click", function(e) {
-    animateIcons(icons[2]);
+    animateIcons(icons[2], 2);
     playGame(2);
 }, {once : true})
 

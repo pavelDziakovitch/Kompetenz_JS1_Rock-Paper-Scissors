@@ -10,16 +10,12 @@ body{
     background-size: cover;
     background-attachment: fixed;
     color:white;
-    font-family: 'Mortal Kombat 4', sans-serif;
     min-height: 100vh;
 }
 
 aside{
-    text-align: center;
-    height: fit-content;
     transition: all 0.3s ease-in-out;
     visibility: hidden;
-
 }
 
 aside p{
@@ -28,171 +24,168 @@ aside p{
 }
 
 h1{
-    font-size: 4vh;
+    font-size: calc(18px + (32 - 18) * ((100vw - 320px) / (1600 - 320)));
 }
 
 h1:first-of-type{
     margin: 0.5em 0;
 }
 
-p, label{
-    font-size: 1.5em;
-}
-
 /* Gamefield */
 
-#gameContainer{
-    height: fit-content;
+.gameContainer{
     max-width: 1200px;
     width: 90%;
     margin: 3% auto;
     padding: 20px 0;
-    text-align: center;
     background-color: rgba(0, 0, 0, 0.808);
     box-shadow: 0 0 200px rgb(0, 0, 0);
+}
+
+.menu{
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.icons{
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+}
+
+.icons span {
+    flex: 1 1 90px;
+}
+.icons span>img{
+    height: 100%;
+    max-width: 7em;
+    max-height: 7em;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.interactiveField{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 400px;
+}
+
+.inputField{
+    width: 20%;
+    height: 2em;
+    order: 2;
+}
+
+.dynamicFontSize{
+    font-size: calc(16px + (28 - 16) * ((100vw - 320px) / (1600 - 320)));
+}
+
+.verifyButton{
+    width: fit-content;
+    height: 2.5em;
+
+    order: 3;
+}
+
+.verifyButton:active ~ .inputField{
+    border-color: green;
+}
+
+.noneInteractiveField{
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.noneInteractiveField > div:not(:first-of-type){
+    width: 40%;
+    margin:0.2em;
+}
+
+.bigIMGs{
+    margin: 1em auto 0;
+    width: 10vw;
+    height: 10vw;
+    display: block;
+}
+
+.border{
+    border: 3px solid;
+}
+
+.borderSmall{
+    border: 2px solid;
+}
+
+.coolBorder{
     border-bottom-left-radius: 100px;
     border-top-right-radius:  100px;
     border-top-left-radius:  20px;
     border-bottom-right-radius:  20px;
 }
 
-#menu{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-#icons{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 2px;
-    flex-grow: 1;
-}
-#icons span {
-    flex: 1 0 90px;
-}
-#icons img{
-    width: 100%;
-    height: 100%;
-    max-width: 6em;
-    max-height: 6em;
-    cursor: pointer;
+.borderSmall, .border, .borderRadius{
     border-radius: 10px;
-    transition: all 0.1s ease-in-out;
 }
 
-#icons img:first-child{
-    border: 2px solid white;
+.borderColorRed{
+    border-color: red;
 }
 
-#icons img:nth-child(2){
-    border: 2px solid gray;
+.borderColorBlue{
+    border-color: blue;
 }
 
-#icons img:last-child{
-    border: 2px solid black;
+.borderColorWhite{
+    border-color: white;
+}
+.borderColorGray{
+    border-color: gray;
+}
+.borderColorBlack{
+    border-color: black;
 }
 
-#userSelection, #userRoundsSet{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1em;
-    flex: 1 1 400px;
-}
-
-
-#inputForRounds{
-    width: 20%;
-    height: 2em;
-    border-radius: 10px;
-    text-align: center;
-    font-family: 'Mortal Kombat 4', sans-serif;
-    font-size: 2vh;
-    order: 2;
-}
-
-#roundBTN{
-    font-family: 'Mortal Kombat 4', sans-serif;
-    width: fit-content;
-    height: 2.5em;
-    border-radius: 10px;
-    font-size: 0.8em;
-    order: 3;
-}
-
-#roundBTN:active ~ #inputForRounds{
-    border-color: green;
-}
-
-#userSelection *, #userRoundsSet *:not(:first-child) {
-    margin-top: 1em;
-}
-
-#roundCounterField{
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin: 1vh 0 1vh 0;
-}
-
-#roundCounterField *{
+.inline, .noneInteractiveField > div:not(:first-of-type) > p{
     display: inline;
 }
 
-#showImgHere{
-    width: 100%;
-    height: auto;
+.flex{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
-#aiField, #userField{
+.textMK{
+    font-family: 'Mortal Kombat 4', sans-serif;
+}
+
+.centerText{
     text-align: center;
-    width: 40%;
-    border-radius: 10px;
 }
 
-#aiField{
-    border: 3px solid red;
+.fitContentHeight{
+    height: fit-content;
 }
 
-#userField{
-    border: 3px solid blue;
-}    
-
-#aiField h1, #aiField p, #userField h1, #userField p{
-    margin:0.2em;
-}
-
-#aiField img, #userField img{
-    display: block;
+.marginTop1em, .interactiveField, .interactiveField>* {
     margin-top: 1em;
-    margin: 1em auto 0;
-    width: 12vw;
-    height: 12vw;
-    border-radius: 10%;
 }
 
-#aiField p, #userField p{
-    display: inline;
+.marginBot1em{
+    margin-bottom: 1em;
 }
 
-#vsText{
-    font-size: calc(2vh + 2vw);
+.width100{
+    width: 100%;
 }
 
 @media (max-width: 720px){
-    #gameContainer{
+    .gameContainer{
         width: 100%;
     }
-    p, label, #vsText{
-        font-size: 1.3em;
+    .bigIMGs{
+        width: 8em;
+        height: 8em;
     }
 }
